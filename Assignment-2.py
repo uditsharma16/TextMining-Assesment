@@ -57,17 +57,18 @@ all_no=[]
 
 
 
-# for file in onlyfiles:
-# #  fileinfo=file.split('.')
-# #  if(fileinfo[1]=="female"):
-# #    female_no.append(fileinfo[0])
-# #  elif(fileinfo[1]=="male"):
-# #     male_no.append(fileinfo[0])
-# #  if(int(fileinfo[2])<=20):
-# #     al_20.append(fileinfo[0])
-# #  elif(int(fileinfo[2])>20):
-# #     au_20.append(fileinfo[0])
-# #  all_no.append(fileinfo[0])
+for file in onlyfiles:
+ fileinfo=file.split('.')
+ if(fileinfo[1]=="female"):
+   female_no.append(file)
+ elif(fileinfo[1]=="male"):
+    male_no.append(file)
+ if(int(fileinfo[2])<=20):
+    al_20.append(file)
+ elif(int(fileinfo[2])>20):
+    au_20.append(file)
+ all_no.append(file)
+print(al_20)
 # #  a=[]
 # #  # print(file)
 # #  xmlstring=r'C:\Users\udit sharma\Desktop\Aut\Text Mining\Assignment2BlogData\blogs'
@@ -108,35 +109,35 @@ all_no=[]
 # #          print(e)
 # #          print(file)
 # #          exit()
-xmlstring=r'C:\Users\udit sharma\Desktop\Aut\Text Mining\Assignment2BlogData\blogs'
-joinstring='/'
-  # count += 1
-
-file=onlyfiles[0]
-with open(xmlstring+joinstring+file ,'r',encoding="ANSI") as f:
-    a=f.read()
-
-f.close()
-max_occur=0
-counts=dict()
-abc=remove_stop_symols(a)
-abx=abc.split()
-for i,word in enumerate(list(set(abx))):
-    # print(word)
-    if(word in counts):
-        counts[word]+=1
-    else:
-        counts[word]=1
-top=[]
-for word in counts:
-    if(counts[word]>max_occur):
-        max_occur=counts[word]
-        top.append(word)
-
-print(counts[top[len(top)-1]])
-print("Hello")
-
-end=time.time()
+# xmlstring=r'C:\Users\udit sharma\Desktop\Aut\Text Mining\Assignment2BlogData\blogs'
+# joinstring='/'
+#   # count += 1
+#
+# file=onlyfiles[0]
+# with open(xmlstring+joinstring+file ,'r',encoding="ANSI") as f:
+#     a=f.read()
+#
+# f.close()
+# max_occur=0
+# counts=dict()
+# abc=remove_stop_symols(a)
+# abx=abc.split()
+# for i,word in enumerate(list(set(abx))):
+#     # print(word)
+#     if(word in counts):
+#         counts[word]+=1
+#     else:
+#         counts[word]=1
+# top=[]
+# for word in counts:
+#     if(counts[word]>max_occur):
+#         max_occur=counts[word]
+#         top.append(word)
+#
+# print(counts[top[len(top)-1]])
+# print("Hello")
+#
+# end=time.time()
 
 
 
