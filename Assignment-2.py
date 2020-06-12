@@ -68,7 +68,25 @@ for file in onlyfiles:
  elif(int(fileinfo[2])>20):
     au_20.append(file)
  all_no.append(file)
+####################Reading all the files in under 20 category
 print(al_20)
+count=0
+data_al_20=[]
+for file in al_20:
+ xmlstring=r'C:\Users\udit sharma\Desktop\Aut\Text Mining\Assignment2BlogData\blogs'
+ joinstring='/'
+ count+=1
+ a=[]
+ try:
+  with open(xmlstring+joinstring+file ,'r',encoding="ANSI") as f:
+    a=f.read()
+
+ except Exception as e:
+     print(count, "errornum")
+     print(e)
+ data_al_20.append(a)
+ f.close()
+
 # #  a=[]
 # #  # print(file)
 # #  xmlstring=r'C:\Users\udit sharma\Desktop\Aut\Text Mining\Assignment2BlogData\blogs'
