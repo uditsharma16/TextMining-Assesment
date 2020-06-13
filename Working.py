@@ -70,29 +70,29 @@ all_no=[]
 
 
 for file in onlyfiles:
-fileinfo=file.split('.')
-if(fileinfo[1]=="female"):
+ fileinfo=file.split('.')
+ if(fileinfo[1]=="female"):
    female_no.append(file)
-elif(fileinfo[1]=="male"):
+ elif(fileinfo[1]=="male"):
     male_no.append(file)
-if(int(fileinfo[2])<=20):
+ if(int(fileinfo[2])<=20):
     al_20.append(file)
-elif(int(fileinfo[2])>20):
+ elif(int(fileinfo[2])>20):
     au_20.append(file)
-all_no.append(file)
+ all_no.append(file)
 #print(al_20)
 
 file=al_20[0]
 data_al20=[]
 for file in al_20:
-xmlstring=r'D:\college\sem2\Text Mining\Assignment_Blog_topic\Assignment2BlogData\blogs'
-joinstring='/'
+ xmlstring=r'D:\college\sem2\Text Mining\Assignment_Blog_topic\Assignment2BlogData\blogs'
+ joinstring='/'
   # count += 1
-a=[]
-with open(xmlstring+joinstring+file ,'r',encoding="ANSI") as f:
+ a=[]
+ with open(xmlstring+joinstring+file ,'r',encoding="ANSI") as f:
   a=f.read()
-data_al20.append(a)
-f.close()
+ data_al20.append(a)
+ f.close()
 
 
 # abc=a.split(' ')
@@ -121,7 +121,7 @@ pre_al20=[]
 # # for words in data_al20.split(''):
 # #     words_al20.append(words)
 for xyz in data_al20:
-pre_al20.append(remove_stop_symols(xyz))
+ pre_al20.append(remove_stop_symols(xyz))
 #print(pre_al20)
 # words =[]
 # for word in pre_al20.split(' '):
@@ -129,7 +129,7 @@ pre_al20.append(remove_stop_symols(xyz))
 print("hello")
 pre_al21=[]
 for xyz in pre_al20:
-pre_al21.append(preprocess(xyz))
+ pre_al21.append(preprocess(xyz))
 print(pre_al20)
 
 print("hello")
