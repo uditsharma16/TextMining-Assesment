@@ -148,3 +148,27 @@ def centreControl(demography):
 
 centreControl("female")
 print(time.time()-start)
+
+
+
+def findNounAndVerb(textFile,wordlist):
+ texttagged=nltk.pos_tag(nltk.word_tokenize(textFile))
+ for i,(word,pos) in enumerate(texttagged):
+  deslist = ['NN', 'NNS', 'NNP', 'NNPS', 'VBD', 'VBN', 'VBP', 'VBZ']
+  if(word in wordlist):
+    print('Nouns/Verb before and After the word:',word)
+    nvBefore=[]
+    nvAfter=[]
+    for j in range(i-1,0,-1):
+     # print(texttagged)
+     if(texttagged[j][1] in deslist):
+      nvBefore.append(texttagged[j][0])
+      if(len(nvBefore)==2):
+       break
+    print ('Cluster Before:',nvBefore)
+    for j in range(i+1,len(texttagged)):
+     if (texttagged[j][1] in deslist):
+      nvAfter.append(texttagged[j][0])
+      if (len(nvAfter) == 2):
+       break
+    print('Cluster After:',nvAfter)
