@@ -84,7 +84,7 @@ def readFileData(demotype):
  data_al20 = []
  # print(demotype)
 
- for file in female_no:
+ for file in selectDemographyData(demotype):
   xmlstring=r'D:\college\sem2\Text Mining\Assignment_Blog_topic\Assignment2BlogData\blogs'
   joinstring='/'
   a=[]
@@ -146,7 +146,7 @@ def centreControl(demography):
     createCorpusAndDictionary(readFileData(demography),demography)
 
 
-centreControl("female")
+centreControl("male")
 print(time.time()-start)
 
 
